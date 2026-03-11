@@ -1,6 +1,6 @@
 # Smart Home Frontend
 
-Web interface for the Smart Home system — monitor sensors and control devices remotely via the browser.
+Web interface for the Smart Home system — monitor temperature/humidity, control fan/light, view history, and configure automation rules.
 
 ## Tech Stack
 
@@ -66,10 +66,10 @@ src/
 ├── contexts/           # React Context providers (Auth, Theme...)
 ├── hooks/              # Custom hooks (useAuth, useDevices...)
 ├── pages/              # Main pages
-│   ├── Login.jsx       # Login
-│   ├── Dashboard.jsx   # System overview
-│   ├── Devices.jsx     # Device management
-│   ├── Sensors.jsx     # Sensor data
+│   ├── Login.jsx       # Login / Register
+│   ├── Dashboard.jsx   # Real-time overview (sensors + device controls)
+│   ├── History.jsx     # Sensor history charts
+│   ├── Settings.jsx    # Automation rules & alert thresholds
 │   └── NotFound.jsx    # 404 page
 ├── routes/             # Routing configuration
 │   └── AppRouter.jsx
@@ -83,9 +83,9 @@ src/
 ## Main Screens
 
 1. **Login** — Sign in / register an account
-2. **Dashboard** — Overview: device status, sensor charts
-3. **Devices** — Device list, toggle on/off, add/remove
-4. **Sensors** — Temperature, humidity, and light charts over time
+2. **Dashboard** — Real-time sensor readings (temperature, humidity) + toggle fan/light
+3. **History** — Temperature & humidity charts over time
+4. **Settings** — Configure automation rules and alert thresholds
 5. **404** — Page not found
 
 ## Branch Strategy
@@ -101,7 +101,3 @@ src/
 - Do not push directly to `main`
 - Work on separate branches → merge into `develop` → when stable → merge into `main`
 - Create a Pull Request for review before merging
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
